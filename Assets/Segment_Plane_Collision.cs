@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SegmentPlaneCollision : MonoBehaviour {
+public class Segment_Plane_Collision : MonoBehaviour {
     public Transform Plane;
     public Transform SegmentStart;
     public Transform SegmentEnd;
@@ -14,7 +14,7 @@ public class SegmentPlaneCollision : MonoBehaviour {
         평면상의 한 점 : P(Px, Py, Pz)
         평면의 방정식 : Nx*x + Ny*y + Nz*z + d = 0
                       d = -N·Q = -(Nx*Px + Ny*Py + Nz*Pz)
-         */
+        */
         Vector3 n = Plane.up.normalized; // 평면의 법선 벡터
         Vector3 p = Plane.position; // 평면상의 한 점
         Vector3 s = SegmentStart.position; // 공간상의 한 점
@@ -38,7 +38,9 @@ public class SegmentPlaneCollision : MonoBehaviour {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(SegmentStart.position, SegmentEnd.position);
 
-        if(distanceFromStartToPlane <= segment.magnitude)
+        // 제곱근 연산은 부하가 크기 때문에 길이의 제곱으로 비교한다.
+        //if(distanceFromStartToPlane <= segment.magnitude)
+        if (Mathf.Pow(distanceFromStartToPlane, 2) <= segment.sqrMagnitude)
         {
             Gizmos.color = Color.cyan; // 선분과 평면이 충돌함
         } else

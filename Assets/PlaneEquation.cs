@@ -6,6 +6,7 @@ public class PlaneEquation : MonoBehaviour {
     public Transform Plane;
     public Transform SpacePoint;
 
+    // 공간상의 한 점에서 평면에 수직으로 선분 그리기
     private void OnDrawGizmos()
     {
         /*
@@ -39,5 +40,7 @@ public class PlaneEquation : MonoBehaviour {
         }
         Gizmos.DrawWireSphere(SpacePoint.position, SpacePoint.localScale.x);
         Gizmos.DrawLine(SpacePoint.position, SpacePoint.position + shortestVector);
+
+        //Gizmos.
     }
 }

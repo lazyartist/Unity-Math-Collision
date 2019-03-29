@@ -13,7 +13,7 @@ public class PlaneEquation : MonoBehaviour {
         법선 벡터 : N(Nx, Ny, Nz)
         평면상의 한 점 : P(Px, Py, Pz)
         평면의 방정식 : Nx*x + Ny*y + Nz*z + d = 0
-                      d = -N·Q = -(Nx*Px + Ny*Py + Nz*Pz)
+                      d = -N·P = -(Nx*Px + Ny*Py + Nz*Pz)
          */
         Vector3 n = Plane.up.normalized; // 평면의 법선 벡터
         Vector3 p = Plane.position; // 평면상의 한 점

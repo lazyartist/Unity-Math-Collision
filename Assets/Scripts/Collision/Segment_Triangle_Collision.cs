@@ -44,8 +44,6 @@ public class Segment_Triangle_Collision : MonoBehaviour
             distance *= -1; // 거리에서 방향 정보를 제거한다.
         }
 
-        // 공간 상의 점과 평면을 연결하는 가장 짧은 벡터
-        Vector3 shortestVector = tn * distance;
         // 선분 벡터(segment vector)
         Vector3 sv = SP2.position - SP1.position;
         // 평면의 법선 벡터와 선분의 각도

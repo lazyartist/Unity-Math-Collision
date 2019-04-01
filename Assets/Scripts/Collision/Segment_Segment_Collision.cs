@@ -22,7 +22,6 @@ public class Segment_Segment_Collision : MonoBehaviour
         Vector3 q2 = Q2.position;
 
         Vector3 v = P2.position - P1.position;
-        Vector3 w = Q2.position - Q1.position;
 
         float denominator = (q2.x - q1.x) * (p1.y - p2.y) - (p1.x - p2.x) * (q2.y - q1.y);
 
